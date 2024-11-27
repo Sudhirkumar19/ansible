@@ -1,0 +1,22 @@
+#YAML works on indentation, means space
+
+- Name: sudhir
+  Email: chinna257@gmail.com
+  Adress: #list of adress
+  - type: perm
+    adressline1: beml layout
+    adressline2: marathali
+
+  - type: current
+    adressline1: beml layout
+    adressline2: marathali
+- Name: ramesh
+  Email: chinna257@gmail.com
+  Adress:
+  - type: perm
+    adressline1: beml layout
+    adressline2: marathali
+
+  - type: current
+    adressline1: beml layout
+    adressline2: marathali

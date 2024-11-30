@@ -3,6 +3,6 @@
   become: true # it takes sudo access, in sudo only packages gets installed ; root access
   tasks: 
   - name: install git
-    apt: 
+    yum: 
       name: git
-      state: present
+      state: absent

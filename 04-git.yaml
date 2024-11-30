@@ -1,0 +1,8 @@
+- name: git
+  hosts: web
+  become: yes # it takes sudo access, in sudo only packages gets installed ; root access
+  tasks: 
+  - name: install git
+    ansible.builtin.package:
+        name: git
+        state: present

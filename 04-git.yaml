@@ -3,6 +3,6 @@
   become: yes # it takes sudo access, in sudo only packages gets installed ; root access
   tasks: 
   - name: install git
-    ansible.builtin.package:
+    ansible.builtin.git:
         name: git
         state: present

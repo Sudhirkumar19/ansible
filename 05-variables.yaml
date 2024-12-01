@@ -16,3 +16,10 @@
   - name: print the information
     ansible.builtin.debug:
         msg: "Hi. I am learning {{course}}, duration is: {{duration}}, tainer is : {{trainer}}"
+
+
+  - name: print the information
+    vars: #task level variables
+        course: "Ansible"
+    ansible.builtin.debug:
+        msg: "Hi. I am learning {{course}}, duration is: {{duration}}, tainer is : {{trainer}}"

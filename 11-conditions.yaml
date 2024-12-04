@@ -14,4 +14,4 @@
   - name: print this if greater than 10
     ansible.builtin.debug:
         msg: "given number is {{ my_number }} is greater than or equal to 10"
-    when: my_number | int >= 10 
+    when: my_number | int >= 10  # here int is converting string to integer after piping( | ), otherwise it will throw error

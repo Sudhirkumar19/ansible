@@ -18,3 +18,8 @@
     ansible.builtin.dnf:
         name: mysql
         state: present
+
+  - name: Check if a package is installed
+    ansible.builtin.dnf:
+        name: postgresql
+        state: present

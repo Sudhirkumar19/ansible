@@ -13,3 +13,8 @@
     - nginx
     - postfix
     - postgresql
+
+  - name: Check if a package is installed
+    ansible.builtin.dnf:
+        name: mysql
+        state: present

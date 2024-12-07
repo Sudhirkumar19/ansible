@@ -6,7 +6,7 @@
   tasks: 
   - name: install packages
     ansible.builtin.dnf: 
-        msg: "{{item}}"
+        #msg: "{{item}}"
         state: present
     loop:
     - mysql

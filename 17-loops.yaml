@@ -1,0 +1,15 @@
+# to install packages
+
+- name: loops demo
+  hosts: local
+  connection: local
+  tasks: 
+  - name: print names
+    ansible.builtin.package: 
+        msg: "Hello {{item}}"
+        state: present
+    loop:
+    - mysql
+    - nginx
+    - postfix
+    - postgresql

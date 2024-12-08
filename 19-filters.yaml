@@ -1,8 +1,7 @@
 - name: demo on filters / functions
-  hosts: web
-  become: yes
-  #connection: web
-  tasks:
+  hosts: local
+  #become: yes
+  connection: local
   - name: print the default variable
     ansible.builtin.debug:
         msg: "Hello {{ course | default('Ansible')}}"

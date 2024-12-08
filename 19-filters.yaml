@@ -29,4 +29,4 @@
     vars:
         numbers: [1,2,3,4,3,4,5,6,8]
     ansible.builtin.debug:
-        msg: "Min: {{ numbers min }} , Max: {{ numbers max }}"
+        msg: "Min: {{ numbers|  min }} , Max: {{ numbers|  max }}"

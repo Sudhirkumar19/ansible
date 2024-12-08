@@ -1,7 +1,7 @@
 - name: demo on filters / functions
   hosts: web
   become: yes
-  connection: web
+  #connection: web
   tasks:
   - name: print the default variable
     ansible.builtin.debug:

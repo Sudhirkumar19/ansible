@@ -1,0 +1,21 @@
+- name: create ec2 and r53 records
+  hosts: local
+  connection: local
+  vars:
+      subnet_id: subnet-01f5afca271d3b98f # replace your subnet_id from networking in ansible server created
+      sg_id: "sg-0c3b0a147a91f5302"
+      ami_id: "ami-09c813fb71547fc4f"
+      instances:
+          - mysql
+          - backend
+          - frontend
+  tasks:
+  - name: create ec2 instance
+    amazon.aws.ec2_instance:
+        name: "{{ item }}"
+        vpc_subnet_id: "{{ subnet_id}}"
+        instance_type: "t3.micro"
+        security_group: "{{ sg_id }}"
+        image_id: "{{ ami_id }}"
+    loop: "{{ instances }}"
+    register: ec2_instances # register is the key word to catch the output here

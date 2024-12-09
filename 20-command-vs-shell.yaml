@@ -10,9 +10,9 @@
     # shell ---> complex like pipes , redirections, etc. it gets the shell environment.
   
   - name: check the process
-    ansible.builtin.shell: ps -ef | grp ssh
+    ansible.builtin.shell: ps -ef | grp ssh  # this will as shell is used which fetches info from server , having more access and less secure
     register: output
 
   - name: check the process
-    ansible.builtin.command: ps -ef | grp ssh
+    ansible.builtin.command: ps -ef | grp ssh  # it will not execute and piping is used , command is mire secure than shell 
     register: output

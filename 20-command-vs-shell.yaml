@@ -3,4 +3,13 @@
   connection: local
   tasks:
   - name: execute the command
-    ansible.builtin.shell: ls -ltr > /tmp/output.txt
+    ansible.builtin.shell: ls -ltr > /tmp/output.txt #login to the server and execute commandinside
+    # command module, just issues the command
+    # command is secure than shell, prefer use command if works
+    # command ----> simple commands, it will not get the shell environment
+    # shell ---> complex like pipes , redirections, etc. it gets the shell environment.
+
+
+  - name: check the process
+    ansible.builtin.command: ps -ef | grp ssh
+    register: output

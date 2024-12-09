@@ -8,7 +8,10 @@
     # command is secure than shell, prefer use command if works
     # command ----> simple commands, it will not get the shell environment
     # shell ---> complex like pipes , redirections, etc. it gets the shell environment.
-
+  
+  - name: check the process
+    ansible.builtin.shell: ps -ef | grp ssh
+    register: output
 
   - name: check the process
     ansible.builtin.command: ps -ef | grp ssh

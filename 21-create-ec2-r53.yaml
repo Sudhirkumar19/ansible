@@ -37,7 +37,7 @@
         overwrite: true
     loop: "{{ ec2_instances.results }}"
   
-  #public IP
+  # public IP r53
   - name: create r53 public records for frontend
     amazon.aws.route53:
         state: present

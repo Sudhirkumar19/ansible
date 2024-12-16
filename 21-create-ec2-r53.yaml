@@ -10,7 +10,7 @@
           - backend
           - frontend
       private_zone: 172.31.94.49
-      public_zone: example.com
+      public_zone: 3.94.179.196
       instance_type: "t3.micro"
       ttl: 1
   tasks:

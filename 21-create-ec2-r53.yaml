@@ -9,7 +9,10 @@
           - mysql
           - backend
           - frontend
-      zone: 172.31.94.49
+      private_zone: 172.31.94.49
+      public_zone: example.com
+      instance_type: "t3.micro"
+      ttl: 1
   tasks:
   - name: ansible to install boto3 and botocore
     ansible.builtin.pip: 

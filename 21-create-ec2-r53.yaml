@@ -50,7 +50,7 @@
     amazon.aws.route53:
       state: present
       zone: "{{ zone }}"
-      record: "{{ zone }}" #daws81s.online
+      record: "{{ zone }}" #frontend.daws81s.online
       type: A
       ttl: 1
       value: "{{ item.instances[0].public_ip_address }}"
@@ -59,16 +59,16 @@
     loop: "{{ ec2_instances.results }}"
     when: item.item == "frontend" #when keyword should not have {{}}
   # public IP r53
-  - name: create r53 public records for frontend
-    amazon.aws.route53:
-        state: present
-        zone: "{{ public_zone }}"
-        record: "{{ public_zone }}" # daws81s.online
-        type: A
-        ttl: 1
-        value: "{{ item.instances[0].public_ip_address}}"
-        wait: true
-        overwrite: true
-    loop: "{{ ec2_instances.results }}"
-    when: item.item == "frontend"
-    #with_items: "{{ ec2_instances.results }}"
+  # - name: create r53 public records for frontend
+  #   amazon.aws.route53:
+  #       state: present
+  #       zone: "{{ zone }}"
+  #       record: "{{ zone }}" # frontend.daws81s.online
+  #       type: A
+  #       ttl: 1
+  #       value: "{{ item.instances[0].public_ip_address}}"
+  #       wait: true
+  #       overwrite: true
+  #   loop: "{{ ec2_instances.results }}"
+  #   when: item.item == "frontend"
+  #   #with_items: "{{ ec2_instances.results }}"
